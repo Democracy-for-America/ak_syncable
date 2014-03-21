@@ -83,8 +83,8 @@ after_save :sync_to_actionkit_with_delay
 Important
 ---------
 Don't forget to set the envirnoment variables!
-* ENV['ACTIONKIT_PATH'] (e.g. 'https://roboticdogs.actionkit.com/rest/v1/')
-* ENV['ACTIONKIT_USERNAME'] (an API-enabled ActionKit user)
+* ENV['ACTIONKIT_PATH'] # (e.g. 'https://roboticdogs.actionkit.com/rest/v1/')
+* ENV['ACTIONKIT_USERNAME'] # (an API-enabled ActionKit user)
 * ENV['ACTIONKIT_PASSWORD']
 
 Requirements
