@@ -9,6 +9,6 @@ Gem::Specification.new do |s|
   s.files       = ["lib/ak_syncable.rb"]
   s.homepage    =
     'https://github.com/Democracy-for-America/'
-  s.add_runtime_dependency 'httparty'
+  s.add_dependency 'httparty'
   s.license       = 'MIT'
 end
