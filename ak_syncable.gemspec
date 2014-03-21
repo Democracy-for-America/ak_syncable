@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name        = 'sk_syncable'
+  s.name        = 'ak_syncable'
   s.version     = '0.0.1'
   s.date        = '2014-03-21'
   s.summary     = "Easily sync any Rails model to ActionKit"
