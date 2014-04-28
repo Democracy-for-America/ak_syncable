@@ -12,7 +12,7 @@ module AkSyncable
     end
   end
 
-  def sync_to_actionkit(**options)
+  def sync_to_actionkit(options = {})
 
     actionkit_attributes = self.class.class_variable_get(:@@synced_attributes)
     actionkit_page = options[:page] || self.class.class_variable_get(:@@actionkit_page)
