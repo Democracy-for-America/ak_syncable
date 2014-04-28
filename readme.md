@@ -4,7 +4,7 @@ ak_syncable
 A module to easily sync any Rails model to ActionKit
 
 ```sh
-gem 'ak_syncable', :git => 'git://github.com/alipman88/ak_syncable.git'
+gem 'ak_syncable', :git => 'git://github.com/Democracy-for-America/ak_syncable.git'
 ```
 
 Example
