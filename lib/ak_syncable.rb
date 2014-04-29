@@ -30,9 +30,9 @@ module AkSyncable
 
     actionkit_attributes.each do |attribute|
       if @@actionkit_user_fields.include? attribute.to_sym
-        body[attribute] = self[attribute]
+        body[attribute] = self[attribute] || self.send(attribute)
       else
-        body['action_' + attribute.to_s] = self[attribute]
+        body['action_' + attribute.to_s] = self[attribute] || self.send(attribute)
       end
     end
 
