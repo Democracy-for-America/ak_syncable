@@ -18,7 +18,7 @@ class Foo < ActiveRecord::Base
 
   syncs_to "name_of_actionkit_page_to_sync_to"
 
-  after_save :sync_to_actionkit_with_delay
+  after_save :sync_to_actionkit
 
 end
 ```
@@ -70,14 +70,13 @@ syncs_to -> { self.region.actionkit_namespace + '_nominations' }
 sync_to_actionkit
 ```sh
 # call syncs_to_actionkit on an instance of any AkSyncable class, to sync that instance to ActionKit
-# or, call sync_to_actionkit_with_delay to create a Delayed::Job
 
 # e.g.
 @foo.sync_to_actionkit
 
-# or
-after_save :sync_to_actionkit_with_delay
-
+# to utilize DelayedJob to process ActionKit syncing as a background task (recommended),
+# simply add the delayed_job gem, and add the following line to the synced classes:
+handle_asynchronously :sync_to_actionkit
 ```
 
 Important

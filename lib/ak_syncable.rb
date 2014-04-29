@@ -57,8 +57,4 @@ module AkSyncable
 
   end
 
-  def sync_to_actionkit_with_delay
-    self.delay.sync_to_actionkit
-  end
-
 end
