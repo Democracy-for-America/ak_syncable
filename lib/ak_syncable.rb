@@ -1,6 +1,6 @@
 module AkSyncable
 
-  @@actionkit_user_fields = [:address1,:address2,:city,:country,:email,:first_name,:last_name,:middle_name,:name,:phone,:postal,:prefix,:region,:state,:suffix,:zip]
+  @@actionkit_default_fields = [:address1,:address2,:city,:country,:email,:first_name,:last_name,:middle_name,:name,:phone,:postal,:prefix,:region,:state,:suffix,:zip,:source]
 
   def self.included(base)
     base.extend(ClassMethods)
@@ -29,7 +29,7 @@ module AkSyncable
     end
 
     actionkit_attributes.each do |attribute|
-      if @@actionkit_user_fields.include? attribute.to_sym
+      if @@actionkit_default_fields.include? attribute.to_sym
         body[attribute] = self[attribute] || self.send(attribute)
       else
         body['action_' + attribute.to_s] = self[attribute] || self.send(attribute)
