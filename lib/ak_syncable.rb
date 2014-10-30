@@ -1,6 +1,6 @@
 module AkSyncable
 
-  @@actionkit_default_fields = [:address1,:address2,:city,:country,:email,:first_name,:last_name,:middle_name,:name,:phone,:postal,:prefix,:region,:state,:suffix,:zip,:source]
+  @@actionkit_default_fields = [:address1,:address2,:city,:country,:email,:first_name,:last_name,:middle_name,:name,:phone,:postal,:prefix,:region,:state,:suffix,:zip,:source,:akid,:referring_akid]
 
   def self.included(base)
     base.extend(ClassMethods)
