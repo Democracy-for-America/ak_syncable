@@ -31,28 +31,14 @@ Options
 
 @@synced_attributes = [:name, :email, :zip, :comment]
 # sets the attributes to sync to ActionKit -- any attribute that isn't an ActionKit core_user field will be prefixed with action_ and synced as a core_actionfield
+
+# avilable default fields include
+#   :address1, :address2, :city, :country, :email, :first_name, :last_name, :middle_name, :name, :phone, :postal,:prefix, :region, :state, :suffix, :zip, :source, :akid, :referring_akid
+# other fields, e.g. :comment may be added to the @@synced_attributes array -- they will be prefixed with "action_" and synced as core_actionfield entries
 ```
 syncs_to
 ```sh
-set the name of the page that will be synced to with the syncs_to() method
-
-# syncs_to can accept a string:
-syncs_to "YOUR_ACTIONKIT_PAGE_NAME_HERE" 
-
-# or a symbol/method:
-syncs_to :actionkit_page
-def actionkit_page
-  return self.region.actionkit_namespace + '_nominations'
-end
-
-# or a lambda:
-syncs_to -> { self.region.actionkit_namespace + '_nominations' }
-```
-
-
-syncs_to
-```sh
-set the name of the page that will be synced to with the syncs_to() method
+set the name of the page that will be synced to with the syncs_to() class method
 
 # syncs_to can accept a string:
 syncs_to "YOUR_ACTIONKIT_PAGE_NAME_HERE" 
@@ -89,7 +75,6 @@ Don't forget to set the envirnoment variables!
 Requirements
 ---------
 * httparty
-* delayed_job
 
 License
 ----
